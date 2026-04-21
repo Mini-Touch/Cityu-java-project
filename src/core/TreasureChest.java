@@ -2,7 +2,7 @@ package core;
 
 import mechanics.DeadEntityException;
 
-public class TreasureChest implements Damageable, Interactable {
+public class TreasureChest implements Damageable{
     private int durability = 50;
     private boolean isOpened = false;
 
@@ -25,7 +25,6 @@ public class TreasureChest implements Damageable, Interactable {
         return durability <= 0;
     }
 
-    @Override
     public void interact(LivingEntity entity) {
         if (isOpened || isDead()) {
             System.out.println("The chest is already empty.");
@@ -36,7 +35,7 @@ public class TreasureChest implements Damageable, Interactable {
         }
     }
 
-    @Override
+    
     public String getDescription() {
         return isOpened ? "An opened empty chest." : "A sturdy locked treasure chest.";
     }
